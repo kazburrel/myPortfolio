@@ -8,6 +8,7 @@ use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PorfotlioController;
+use App\Mail\ContactMe;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,10 @@ use App\Http\Controllers\PorfotlioController;
 // Index for the main website
 Route::get('/', [ViewController::class, 'MainIndexView']);
 
+// Route::get('email', [ViewController::class, 'EmailView']);
+
 // Storing Contact me details
-Route::post('/contact', [ContactController::class, 'StoreMesaageDetails']);
+Route::post('/contact', [ContactController::class, 'StoreMesaageDetails'])->middleware('auth');
 
 // Store for Resume Update through Admin
 Route::prefix('/admin')->group(function () {
@@ -66,6 +69,8 @@ Route::prefix('/admin')->group(function () {
     Route::post('/resume', [ResumeController::class, 'StoreResumeDetails'])->middleware('auth');
     // Edit for Resume
     Route::put('/resume/{resume}', [ResumeController::class, 'EditResumeDetails'])->middleware('auth');
+    // Delete for Resume
+    Route::delete('/resume/{resume}', [ResumeController::class, 'DestroyResume'])->middleware('auth');
 
     // View for Skills Update through Admin
     Route::get('/skills', [ViewController::class, 'AdminSkillsView'])->middleware('auth');

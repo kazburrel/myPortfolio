@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Models\profile;
 
 class ContactMe extends Mailable
 {
@@ -29,6 +30,7 @@ class ContactMe extends Mailable
      */
     public function build()
     {
+
         return $this->view('email')
             ->subject('A new contact email')
             ->from('oegbosionu@gmail.com', 'Admin')

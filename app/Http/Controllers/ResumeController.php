@@ -25,8 +25,9 @@ class ResumeController extends Controller
         Alert::success('Resume Created Successfully');
         return redirect()->back();
     }
-// Edit Resume
-    public function EditResumeDetails(Request $request, Resume $resume) {
+    // Edit Resume
+    public function EditResumeDetails(Request $request, Resume $resume)
+    {
         $formFields = $request->validate([
             'type' => 'required',
             'title' => 'required',
@@ -40,6 +41,13 @@ class ResumeController extends Controller
         // dd($id);
         $resume->update($formFields);
         Alert::success('Resume Updated Successfully');
+        return redirect()->back();
+    }
+
+    public function DestroyResume(Resume $resume)
+    {
+        $resume->delete();
+        Alert::success('Resume Deleted Successfully');
         return redirect()->back();
     }
 }

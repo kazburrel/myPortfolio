@@ -66,7 +66,7 @@
                 <!--Main Header-->
                 <div class="header-main" data-simplebar>
                     <div class="image-container">
-                        <h2 class="header-name">{{ $profile->first_name }} {{ $profile->last_name }}</h2>
+                        <h2 class="header-name">{{ $profile->first_name }} &nbsp; {{ $profile->last_name }}</h2>
                         <img src="{{ asset('storage/' . $profile->avatar) }}" alt="profile-pic">
                     </div>
 
@@ -177,16 +177,15 @@
                                             Rathfarnham</span></li> --}}
                                     <li><span class="title">Email </span><span
                                             class="value">{{ $profile->email }}</span></li>
-                                    <li><span class="title">Phone</span><span
-                                            class="value">({{ $profile->phone }}
+                                    <li><span class="title">Phone</span><span class="value">{{ $profile->phone }}
                                         </span></li>
                                     <li><span class="title">Freelance</span><span
                                             class="value">{{ $profile->freelance }} </span>
                                     </li>
                                 </ul>
-                                <div class="resume-button mt-30">
+                                {{-- <div class="resume-button mt-30">
                                     <a class="btn-main" href="extras/Kizito_Nzeka_CV.zip" download>Download Resume</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -569,7 +568,7 @@
                         <!--Contact Info Item-->
                         <div class="col-md-4 info-item">
                             <span class="icon"><i class="fas fa-paper-plane"></i></span>
-                            <h5><a href="mailto:kizzyche@ymail.com">{{ $profile->email }}</a></h5>
+                            <h5><a href="mailto:oegbosionu@gmail.com">{{ $profile->email }}</a></h5>
                         </div>
 
                         <!--Contact Info Item-->

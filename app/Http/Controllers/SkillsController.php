@@ -10,12 +10,12 @@ class SkillsController extends Controller
 {
     public function StoreSkillsDetails(Request $request)
     {
-        $formFields = $request -> validate([
-            'type'=>'required',
-            'language'=>'required',
-            'percentage'=>'required'
+        $formFields = $request->validate([
+            'type' => 'required',
+            'language' => 'required',
+            'percentage' => 'required'
         ]);
-        dd($formFields);
+        // dd($formFields);
         Skills::create($formFields);
         Alert::success('Skills Created Successfully');
         return redirect()->back();
@@ -23,10 +23,10 @@ class SkillsController extends Controller
 
     public function EditSkillsDetails(Request $request, Skills $skills)
     {
-        $formFields = $request -> validate([
-            'type'=>'required',
-            'language'=>'required',
-            'percentage'=>'required'
+        $formFields = $request->validate([
+            'type' => 'required',
+            'language' => 'required',
+            'percentage' => 'required'
         ]);
         $skills->update($formFields);
         Alert::success('Skills Updated Successfully');
@@ -36,8 +36,7 @@ class SkillsController extends Controller
     public function DestroySkill(Skills $skills)
     {
         $skills->delete();
-        Alert::success('Skill Deleted Successfully'); 
+        Alert::success('Skill Deleted Successfully');
         return redirect()->back();
     }
 }
-

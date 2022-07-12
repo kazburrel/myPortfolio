@@ -83,6 +83,12 @@ class ViewController extends Controller
 
         $category = PortfolioCategory::all();
         $portfolios = Portfolio::all();
-        return view('admin.portfolio', ['category' => $category, 'portfolios'=>$portfolios]);
+        return view('admin.portfolio', ['category' => $category, 'portfolios' => $portfolios]);
+    }
+
+    public function EmailView()
+    {
+
+        return view('email');
     }
 }
