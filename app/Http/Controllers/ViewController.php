@@ -69,10 +69,10 @@ class ViewController extends Controller
         return view('admin.resume', ['resumes' => $resumes, 'profile' => $profile]);
     }
 
-    // View for Resume Update through Admin
+    // View for Skill Update through Admin
     public function AdminSkillsView()
     {
-        $skills = Skills::all();
+        $skills = Skills::paginate(4);
         $profile = profile::first();
         return view('admin.skills', ['skills' => $skills, 'profile' => $profile]);
     }
