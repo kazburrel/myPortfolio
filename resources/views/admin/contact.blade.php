@@ -38,7 +38,8 @@ $data['cont']
 
 
                                         <td>
-                                            <div class="badge badge-light fw-bolder">{{Str::words( $contact->message, 5, '...')}}</div>
+                                            <div class="badge badge-light fw-bolder">
+                                                {{ Str::words($contact->message, 5, '...') }}</div>
                                         </td>
                                         {{-- {{ Str::words($resume->description, 5, '...') }} --}}
                                         <td class="text-end">
@@ -158,9 +159,9 @@ $data['cont']
 
                                                                 <div class="">
                                                                     <h3>MESSAGE:</h3>
-                                                                <div class=" overflow-scroll" style="height: 100px;">
-                                                                    {{ $contact->message }}
-                                                                </div>
+                                                                    <div class=" overflow-scroll" style="height: 100px;">
+                                                                        {{ $contact->message }}
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
@@ -179,6 +180,7 @@ $data['cont']
                             </tbody>
                             <!--end::Table body-->
                         </table>
+                        {{ $contactMe->links() }}
                         <!--end::Table-->
                     </div>
                     <!--end::Card body-->

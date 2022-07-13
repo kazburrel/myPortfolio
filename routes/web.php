@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PorfotlioController;
 use App\Mail\ContactMe;
@@ -33,6 +34,8 @@ Route::post('/contact', [ContactController::class, 'StoreMesaageDetails'])->midd
 Route::prefix('/admin')->group(function () {
     // View For Admin Dashboard
     Route::get('/dashboard', [ViewController::class, 'AdminIndexView'])->middleware('auth');
+    // dashboard details for visitors
+    Route::get('/dashboard', [DashboardController::class, 'location'])->middleware('auth');
 
     // View for Sign up
     Route::get('/sign-up', [ViewController::class, 'SignUpView']);

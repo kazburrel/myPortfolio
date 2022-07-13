@@ -9,7 +9,7 @@
             </div>
         </div>
         <div id="kt_account_settings_profile_details" class="collapse show">
-            
+
             <form method="POST" action="/admin/profile" id="kt_account_profile_details_form" class="form"
                 enctype="multipart/form-data">
                 @csrf
@@ -660,8 +660,8 @@
                                         <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                             <!--begin::Form-->
 
-                                            <form action="/admin/profile" method="POST"
-                                                id="kt_modal_add_user_form" class="form" enctype="multipart/form-data">
+                                            <form action="/admin/profile" method="POST" id="kt_modal_add_user_form"
+                                                class="form" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="card-body border-top p-9">
@@ -1672,8 +1672,7 @@
                                                 <div class="card-footer d-flex justify-content-end py-6 px-9">
                                                     <div class="text-center pt-15">
                                                         <button type="submit" class="btn btn-primary"
-                                                            id="kt_modal_add_user_form"
-                                                            >
+                                                            id="kt_modal_add_user_form">
                                                             Save
                                                             Changes
                                                         </button>
@@ -1696,7 +1695,7 @@
                     <!--begin::Card body-->
                     <div class="card-body py-4">
                         <!--begin::Table-->
-                        <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
+                        <table class="table align-middle table-row-dashed fs-6 gy-5">
                             <!--begin::Table head-->
                             <thead>
                                 <!--begin::Table row-->

@@ -50,7 +50,7 @@ class ViewController extends Controller
     // Contact View
     public function ContactView()
     {
-        $contactMe = ContactMe::all();
+        $contactMe = ContactMe::paginate(3);
         return view('admin.contact', ['contactMe' => $contactMe]);
     }
 
@@ -64,7 +64,7 @@ class ViewController extends Controller
     // View for Resume Update through Admin
     public function AdminResumeView()
     {
-        $resumes = Resume::all();
+        $resumes = Resume::paginate(3);
         $profile = profile::first();
         return view('admin.resume', ['resumes' => $resumes, 'profile' => $profile]);
     }
@@ -82,7 +82,7 @@ class ViewController extends Controller
     {
 
         $category = PortfolioCategory::all();
-        $portfolios = Portfolio::all();
+        $portfolios = Portfolio::paginate(3);
         return view('admin.portfolio', ['category' => $category, 'portfolios' => $portfolios]);
     }
 

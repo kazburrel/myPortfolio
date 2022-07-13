@@ -178,15 +178,15 @@
                                 </a>
                             </div>
                             <!--end::Avatar-->
-                        </td>                     
-                        <td>{{ $portfolio->pro_name }}</td>                     
+                        </td>
+                        <td>{{ $portfolio->pro_name }}</td>
                         <td>
                             <div class="badge badge-light fw-bolder">{{ $portfolio->pro_url }}</div>
-                        </td>                       
+                        </td>
                         <td>
                             <div class="badge badge-light fw-bolder">{{ Str::slug($portfolio->pro_type, '-') }}</div>
-                        </td>                      
-                        <td>{{ $portfolio->pro_des }}</td>      
+                        </td>
+                        <td>{{ $portfolio->pro_des }}</td>
                         <td class="text-end">
                             <a href="#" class="btn btn-light btn-active-light-primary btn-sm"
                                 data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
@@ -211,34 +211,32 @@
                                 </div>
                                 <div class="menu-item px-3">
                                     <a href="#" class="menu-link px-3" data-bs-toggle="modal"
-                                    data-bs-target="#kt_modal_1{{$portfolio->id}}"
+                                        data-bs-target="#kt_modal_1{{ $portfolio->id }}"
                                         data-kt-users-table-filter="delete_row">Delete</a>
                                 </div>
                                 <!--end::Menu item-->
                             </div>
                     </tr>
 
-                    <div class="modal fade" tabindex="-1" id="kt_modal_1{{$portfolio->id}}">
+                    <div class="modal fade" tabindex="-1" id="kt_modal_1{{ $portfolio->id }}">
                         <div class="modal-dialog">
                             <div class="modal-content text-center">
                                 <div class="modal-header">
                                     <h5 class="modal-title"></h5>
 
                                     <!--begin::Close-->
-                                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2"
-                                        data-bs-dismiss="modal" aria-label="Close">
+                                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                        aria-label="Close">
                                         <span class="svg-icon svg-icon-2x">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                            height="24" viewBox="0 0 24 24" fill="none">
-                                            <rect opacity="0.5" x="6" y="17.3137"
-                                                width="16" height="2" rx="1"
-                                                transform="rotate(-45 6 17.3137)"
-                                                fill="currentColor" />
-                                            <rect x="7.41422" y="6" width="16"
-                                                height="2" rx="1"
-                                                transform="rotate(45 7.41422 6)"
-                                                fill="currentColor" />
-                                        </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16"
+                                                    height="2" rx="1" transform="rotate(-45 6 17.3137)"
+                                                    fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2"
+                                                    rx="1" transform="rotate(45 7.41422 6)"
+                                                    fill="currentColor" />
+                                            </svg>
                                         </span>
                                     </div>
                                     <!--end::Close-->
@@ -249,9 +247,8 @@
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-center">
-                                    <button type="button" class="btn btn-light"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <x-delete href="/admin/portfolio/{{$portfolio->id}}" />
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                    <x-delete href="/admin/portfolio/{{ $portfolio->id }}" />
                                 </div>
                             </div>
                         </div>
@@ -269,19 +266,17 @@
                                     <h2 class="fw-bolder">Update Portfolio</h2>
                                     <!--end::Modal title-->
                                     <!--begin::Close-->
-                                    <div class="btn btn-icon btn-sm btn-active-icon-primary"
-                                    data-bs-dismiss="modal" aria-label="Close">
+                                    <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal"
+                                        aria-label="Close">
                                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                                         <span class="svg-icon svg-icon-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="6" y="17.3137"
-                                                    width="16" height="2" rx="1"
-                                                    transform="rotate(-45 6 17.3137)"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16"
+                                                    height="2" rx="1" transform="rotate(-45 6 17.3137)"
                                                     fill="currentColor" />
-                                                <rect x="7.41422" y="6" width="16"
-                                                    height="2" rx="1"
-                                                    transform="rotate(45 7.41422 6)"
+                                                <rect x="7.41422" y="6" width="16" height="2"
+                                                    rx="1" transform="rotate(45 7.41422 6)"
                                                     fill="currentColor" />
                                             </svg>
                                         </span>
@@ -299,13 +294,14 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
-                                       
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="fv-row mb-7">
-                                                    <select class="form-select" aria-label="Select example" name="pro_type">
+                                                    <select class="form-select" aria-label="Select example"
+                                                        name="pro_type">
                                                         @forelse ($category as $cat)
-                                                            <option value="">{{$cat->cat_name}}</option>
+                                                            <option value="">{{ $cat->cat_name }}</option>
                                                             {{-- <option @selected( $portfolio->pro_type == 'javascript' ) value="javascript">Javascript</option>
                                                             <option @selected( $portfolio->pro_type == 'bootstrap' ) value="bootstrap">Bootstrap</option>
                                                             <option @selected( $portfolio->pro_type == 'php' ) value="php">PHP</option>
@@ -318,42 +314,47 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                        
+
                                             <div class="col-6">
                                                 <div class="fv-row mb-7">
                                                     <label class="fs-6 fw-bold form-label mt-3">
                                                         <span>PROJECT NAME</span>
-                                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                                        <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                            data-bs-toggle="tooltip"
                                                             title="Enter the contact's phone number (optional)."></i>
                                                     </label>
-                                                    <input type="text" class="form-control form-control-solid" name="pro_name" value="{{$portfolio->pro_name}}" />
+                                                    <input type="text" class="form-control form-control-solid"
+                                                        name="pro_name" value="{{ $portfolio->pro_name }}" />
                                                     @error('pro_name')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
                                             </div>
-                        
+
                                             <div class="col-6">
                                                 <div class="fv-row mb-7">
                                                     <label class="fs-6 fw-bold form-label mt-3">
                                                         <span>DESCRIPTION</span>
-                                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"></i>
+                                                        <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                            data-bs-toggle="tooltip"></i>
                                                     </label>
-                                                    <input type="text" class="form-control form-control-solid" name="pro_des" value="{{$portfolio->pro_des}}" />
+                                                    <input type="text" class="form-control form-control-solid"
+                                                        name="pro_des" value="{{ $portfolio->pro_des }}" />
                                                     @error('percentage')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
                                             </div>
-                        
+
                                             <div class="col-6">
                                                 <div class="fv-row mb-7">
                                                     <label class="fs-6 fw-bold form-label mt-3">
                                                         <span>PROJECT URL</span>
-                                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"></i>
+                                                        <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                            data-bs-toggle="tooltip"></i>
                                                     </label>
-                                                    <input type="text" class="form-control form-control-solid" name="pro_url"
-                                                        value="{{$portfolio->pro_url}}" />
+                                                    <input type="text" class="form-control form-control-solid"
+                                                        name="pro_url" value="{{ $portfolio->pro_url }}" />
                                                     @error('pro_url')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
@@ -363,10 +364,11 @@
                                                 <div class="fv-row mb-7">
                                                     <label class="fs-6 fw-bold form-label mt-3">
                                                         <span>PROJECT IMAGE</span>
-                                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"></i>
+                                                        <i class="fas fa-exclamation-circle ms-1 fs-7"
+                                                            data-bs-toggle="tooltip"></i>
                                                     </label>
-                                                    <input type="file" class="form-control form-control-solid" name="pro_img"
-                                                        value="{{$portfolio->pro_img}}" />
+                                                    <input type="file" class="form-control form-control-solid"
+                                                        name="pro_img" value="{{ $portfolio->pro_img }}" />
                                                     @error('pro_img')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
@@ -393,6 +395,7 @@
             </tbody>
             <!--end::Table body-->
         </table>
+        {{ $portfolios->links() }}
         <!--end::Table-->
     </div>
 @endsection
