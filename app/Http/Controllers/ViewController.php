@@ -50,7 +50,7 @@ class ViewController extends Controller
     // Contact View
     public function ContactView()
     {
-        $contactMe = ContactMe::paginate(3);
+        $contactMe = ContactMe::paginate(3 );
         return view('admin.contact', ['contactMe' => $contactMe]);
     }
 
