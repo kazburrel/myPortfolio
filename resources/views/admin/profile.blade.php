@@ -1733,8 +1733,8 @@
                                         <div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
                                             <a href="#">
                                                 <div class="symbol-label">
-                                                    <img src="{{ asset('storage/' . $profile->avatar) }}"
-                                                        alt="avatar" class="w-100" />
+                                                    <img src="{{ asset('storage/' . $profile->avatar) }}" alt="avatar"
+                                                        class="w-100" />
                                                 </div>
                                             </a>
                                         </div>

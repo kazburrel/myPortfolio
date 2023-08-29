@@ -50,8 +50,7 @@ class ProfileController extends Controller
         if ($request->hasFile('avatar')) {
             $formFields['avatar'] = $request->file('avatar')->store('avatars', 'public');
         }
-        // dd($request);
-        // dd($request,$formFields);
+      
         profile::first()->update($formFields);
         Alert::success('Profile Updated Successfully');
 

@@ -232,8 +232,7 @@
                                                     <!--begin::Form-->
 
                                                     <form action="/admin/skills/{{ $skill->id }}" method="POST"
-                                                        id="kt_ecommerce_settings_general_form" class="form p-4"
-                                                        action="#">
+                                                        id="kt_ecommerce_settings_general_form" class="form p-4">
                                                         @csrf
                                                         @method('PUT')
                                                         <div class="row">

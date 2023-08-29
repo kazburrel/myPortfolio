@@ -205,7 +205,7 @@
                                 data-kt-menu="true">
                                 <div class="menu-item px-3">
                                     <a href="#" class="menu-link px-3" data-bs-toggle="modal"
-                                        data-bs-target="#kt_modal_add_user-{{ $portfolio->id }}">
+                                        data-bs-target="#kt_modal_add_user{{ $portfolio->id }}">
                                         Edit
                                     </a>
                                 </div>
@@ -254,7 +254,7 @@
                         </div>
                     </div>
 
-                    <div class="modal fade" id="kt_modal_add_user-{{ $portfolio->id }}" tabindex="-1"
+                    <div class="modal fade" id="kt_modal_add_user{{ $portfolio->id }}" tabindex="-1"
                         aria-hidden="true">
                         <!--begin::Modal dialog-->
                         <div class="modal-dialog modal-dialog-centered mw-650px">
@@ -301,11 +301,8 @@
                                                     <select class="form-select" aria-label="Select example"
                                                         name="pro_type">
                                                         @forelse ($category as $cat)
-                                                            <option value="">{{ $cat->cat_name }}</option>
-                                                            {{-- <option @selected( $portfolio->pro_type == 'javascript' ) value="javascript">Javascript</option>
-                                                            <option @selected( $portfolio->pro_type == 'bootstrap' ) value="bootstrap">Bootstrap</option>
-                                                            <option @selected( $portfolio->pro_type == 'php' ) value="php">PHP</option>
-                                                            <option @selected( $portfolio->pro_type == 'laravel' ) value="laravel">Laravel</option> --}}
+                                                            <option value="{{ $cat->cat_name }}">{{ $cat->cat_name }}
+                                                            </option>
                                                         @empty
                                                         @endforelse
                                                     </select>

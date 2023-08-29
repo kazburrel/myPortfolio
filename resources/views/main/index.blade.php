@@ -127,6 +127,7 @@
                         <span>I am a </span>
                         <span class="cd-words-wrapper">
                             <b class="is-visible">Web Developer</b>
+                            <b class="is-visible">Medical Lab. Scientist</b>
                         </span>
                     </p>
 
