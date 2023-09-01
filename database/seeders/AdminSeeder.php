@@ -19,8 +19,8 @@ class AdminSeeder extends Seeder
             'first_name' => 'Obiora',
             'last_name' => 'Egbosionu',
             'email' => 'oegbosionu@gmail.com',
-            'password' => bcrypt('password'),
-            'password_confirmation' => bcrypt('password'),
+            'password' => bcrypt('Kazobiora10.'),
+            // 'password_confirmation' => bcrypt('Kazobiora10.'),
         ]);
     }
 }
